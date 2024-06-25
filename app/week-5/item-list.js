@@ -17,15 +17,15 @@ export default function ItemList() {
 
   return (
     <div>
-    <div className="rounded flex px-10 py-5 bg-pink-300 mb-5">
+    <div className="rounded flex px-10 py-5 bg-pink-300 mb-5 text-black">
         <div className='flex-1'>
-          <label>Sort By:</label>
+          <label className='font-bold'>Sort By:</label>
           <button
             onClick={() => setSortBy("name")}
-            className="mx-2 px-2 py-1" >Name </button>
+            className="mx-2 px-2 py-1 bg-pink-100 rounded-xl" >Name </button>
            <button
             onClick={() => setSortBy("category")}
-            className="mx-2 px-2 py-1">Category </button>
+            className="mx-2 px-2 py-1 bg-pink-100 rounded-xl">Category </button>
         </div>
     </div>
       <div className="container mx-auto p-4">
