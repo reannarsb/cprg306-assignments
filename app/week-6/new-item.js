@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 
-export default function NewItemPage({ onAddItem, nextId }) {
+export default function NewItemPage({ onAddItem}) {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("produce");
+  const [id, setId] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,6 +15,7 @@ export default function NewItemPage({ onAddItem, nextId }) {
       name: name,
       quantity: quantity,
       category: category,
+      id: id,
     };
 
     onAddItem(newItem);
@@ -21,6 +23,7 @@ export default function NewItemPage({ onAddItem, nextId }) {
     setName("");
     setQuantity(1);
     setCategory("produce");
+    setId("")
   };
 
   let inputStyle = "mx-2 rounded-lg border-2 pl-1 text-gray-500";
@@ -34,6 +37,16 @@ export default function NewItemPage({ onAddItem, nextId }) {
           type="text" 
           value={name} 
           onChange={(event) => setName(event.target.value)} 
+          className={inputStyle} 
+        />
+      </div>
+
+      <div className="my-1">
+        <label className={labelStyle}>ID: </label>
+        <input 
+          type="text" 
+          value={id} 
+          onChange={(event) => setId(event.target.value)} 
           className={inputStyle} 
         />
       </div>
