@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
 import { useState } from 'react';
 import Item from './item';
 
-export default function ItemList({ items }) {
-
+export default function ItemList({ items, onItemSelect }) {
   const [sortBy, setSortBy] = useState('name');
 
   let sortedItems = [...items].sort((a, b) => {
@@ -35,7 +34,7 @@ export default function ItemList({ items }) {
       <div className="container mx-auto p-4">
         <ul className="list-none">
           {sortedItems.map((item) => (
-            <Item key={item.id} itemObj={item} />
+            <Item key={item.id} itemObj={item} onSelect={onItemSelect} />
           ))}
         </ul>
       </div>
