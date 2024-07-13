@@ -40,7 +40,7 @@ export default function MealIdeas({ ingredient }) {
           {meals.map((meal) => (
             <li key={meal.idMeal}>
               <h2>{meal.strMeal}</h2>
-              <img src={meal.strMealThumb} alt={meal.strMeal} style={{ width: "100px" }} />
+              <img src={meal.strMealThumb} alt={meal.strMeal} />
             </li>
           ))}
         </ul>
